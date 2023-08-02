@@ -788,18 +788,18 @@ ul.external li a:hover {
     text-transform: uppercase;
 }
 
-#testimonials .owl-controls.clickable {
+#experience .owl-controls.clickable {
     margin-top: 20px;
     text-align: center;
 }
 
-#testimonials .owl-buttons {
+#experience .owl-buttons {
     border: 2px solid #fff;
     float: inherit;
 }
 
-#testimonials .owl-prev:hover,
-#testimonials .owl-next:hover {
+#experience .owl-prev:hover,
+#experience .owl-next:hover {
     color: #fff;
 }
 
