@@ -727,17 +727,17 @@ ul.external li a:hover {
 ==================================================================*/
 
 
-#testimonials {
+#experience {
     background-image: url("../img/slider/19.webp");
     padding: 0;
     color: #fff;
 }
 
-#testimonials .sec-title h2:after {
+#experience .sec-title h2:after {
     border-bottom: 1px solid #fff;
 }
 
-#testimonials .overlay {
+#experience .overlay {
     background-color: rgba(135,206,235,0.78);
     padding: 70px 0 40px;
 }
