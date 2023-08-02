@@ -727,8 +727,8 @@ ul.external li a:hover {
 ==================================================================*/
 
 
-#testimonials {
-    background-image: url(../img/slider/19.webp);
+#experience {
+    background-image: url("../img/slider/19.webp");
     padding: 0;
     color: #fff;
 }
