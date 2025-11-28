@@ -111,13 +111,6 @@ main > section {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.logo-large {
-    transform: scale(1.5);
-    display: inline-block;
-    position: relative;
-    z-index: 2;
-}
-
 .btn-effect:before {
 	content: "";
 	position: absolute;
@@ -1450,4 +1443,11 @@ textarea.form-control {
     .footer-content {
         width: 380px;
     }
+}
+
+.logo-large {
+    transform: scale(1.5);
+    display: inline-block;
+    position: relative;
+    z-index: 2;
 }
