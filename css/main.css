@@ -1446,7 +1446,14 @@ textarea.form-control {
 }
 
 .logo-large {
-    transform: scale(1.5);
+    transform: scale(1.4);
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-small {
+    transform: scale(0.8);
     display: inline-block;
     position: relative;
     z-index: 2;
