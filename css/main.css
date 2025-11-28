@@ -1445,8 +1445,16 @@ textarea.form-control {
     }
 }
 
-.logo-large {
+.logo-large_sc {
     transform: scale(1.3);
+    display: inline-block;
+    position: relative;
+    z-index: 999;
+    margin-top: 10px;
+}
+
+.logo-large_ne {
+    transform: scale(1.2);
     display: inline-block;
     position: relative;
     z-index: 999;
