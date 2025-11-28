@@ -167,7 +167,7 @@ main > section {
 }
 
 .sec-title h2 {
-    font-size: 35px !important;
+    font-size: 80px !important;
     margin: 0 0 30px;
     padding-bottom: 10px;
     position: relative;
@@ -186,7 +186,7 @@ main > section {
     bottom: 0;
     position: absolute;
     width: 115px;
-    font-size: 35px !important;
+    font-size: 80px !important;
 }
 
 .sec-title.white h2:after {
@@ -736,7 +736,7 @@ ul.external li a:hover {
 
 #experience .sec-title h2:after {
     border-bottom: 1px solid #fff;
-    font-size: 35px !important;
+    font-size: 80px !important;
 }
 
 #experience .overlay {
@@ -1235,12 +1235,12 @@ textarea.form-control {
     }
 
     .sec-title h2 {
-        font-size: 35px !important;
+        font-size: 80px !important;
     }
 
     .sec-title h2:after {
         left: 30%;
-        font-size: 35px !important;
+        font-size: 80px !important;
     }
 
 /*navigation*/
@@ -1375,7 +1375,7 @@ textarea.form-control {
 
     .sec-title h2:after {
         left: 38%;
-        font-size: 35px !important;
+        font-size: 80px !important;
     }
 
 /* home slider */
