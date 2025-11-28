@@ -16,7 +16,7 @@
 
 body {
     background-color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 24px;
     font-size: 18px;
     color: #818181;
@@ -1461,7 +1461,7 @@ textarea.form-control {
 }
 
 .logo-small {
-    transform: scale(0.7);
+    transform: scale(0.9);
     display: inline-block;
     position: relative;
     z-index: 2;
