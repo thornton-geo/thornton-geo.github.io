@@ -1449,11 +1449,11 @@ textarea.form-control {
     transform: scale(1.3);
     display: inline-block;
     position: relative;
-    z-index: 2;
+    z-index: 999;
 }
 
 .logo-small {
-    transform: scale(0.7);
+    transform: scale(0.65);
     display: inline-block;
     position: relative;
     z-index: 2;
