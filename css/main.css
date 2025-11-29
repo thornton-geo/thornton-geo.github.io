@@ -314,6 +314,18 @@ h1.navbar-brand
     text-transform: uppercase;
 }
 
+.navbar-brand a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.navbar-brand a:hover,
+.navbar-brand a:focus,
+.navbar-brand a:active {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
 
 /*=================================================================
 	Home Slider
@@ -798,7 +810,6 @@ ul.external li a:hover {
     display: inline-block;
     font-weight: 700;
     margin: 40px 0 30px;
-    text-transform: uppercase;
 }
 
 #experience .owl-controls.clickable {

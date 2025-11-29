@@ -44,6 +44,119 @@
 		<!-- Modernizer Script for old Browsers -->
         <script src="js/modernizr-2.6.2.min.js"></script>
 
+        <style>
+
+        .accordion-item {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            background: #a0a0a0;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: #888888;
+        }
+
+        .accordion-header h3 {
+            font-size: 2.3rem;
+            font-weight: normal;
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            color: #666;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-content-inner {
+            padding: 25px;
+            background: #fff;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 3000px;
+        }
+
+        .presentation-entry,
+        .service-entry,
+        .policy-entry {
+            margin-bottom: 20px;
+            padding-left: 0;
+            line-height: 1.8;
+        }
+
+        .presentation-entry:last-child,
+        .service-entry:last-child,
+        .policy-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .year {
+    font-weight: 700;
+}
+
+        a {
+            color: #000080;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #0000cd;
+            text-decoration: underline;
+        }
+
+        sup {
+            font-size: 0.75em;
+        }
+
+        @media (max-width: 768px) {
+            .sec-title h2 {
+                font-size: 2rem;
+            }
+
+            .sec-title p {
+                font-size: 1.5rem;
+            }
+
+            .accordion-header h3 {
+                font-size: 1.25rem;
+            }
+
+            .accordion-content-inner {
+                padding: 20px;
+            }
+        }
+    </style>
+
     </head>
 	
     <body id="body">
@@ -84,7 +197,7 @@
                         <li><a href="#body">Home</a></li>
                         <li><a href="#publications">Publications</a></li>
                         <li><a href="#experience">Experience</a></li>
-                        <li><a href="#outreach">Outreach</a></li>
+                        <li><a href="#contributions">Contributions</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -202,7 +315,7 @@
 				<div class="container">
 					<div class="row">
 							<div class="sec-title text-center wow animated fadeInDown" style="font-size: 2.5rem;">
-							<p><strong>Publications:</strong></p>
+							<p><strong>Publications</strong></p>
 						</div>
 						
 
@@ -310,7 +423,8 @@
 							</li>
 							
 							<br><br>
-							<p>* denotes first author. † denotes invited "News & Views" article. In addition, my PhD thesis is available <a href="https://thesiscommons.org/zktsh/" style="color:#000080;">here</a>.</p><br><br>
+							<p>* denotes first author. † denotes invited "News & Views" article. <br><br>
+							In addition, my PhD thesis is available <a href="https://thesiscommons.org/zktsh/" style="color:#000080;">here</a>.</p><br><br>
 							<!--   <p><em>Manuscript in press: </em></p><br>    -->
 							<!--<p>van Tiel, M., Aubry-Wake, C., Somers, L., Andermann, C., Avanzi, F., Baraer, M., Daigre C., Chiogna G., Das, S., Drenkhan, F., Farinotti, D., Fyffe, C., de Graaf, I., Hanus, S., Immerzeel, W., Koch, F., McKenzie, J., M&uuml;ller, T., Popp, A.L., Saidaliyeva, Z., Schaefli, B., Schilling, O.S., Teagai, K., <strong>Thornton, J.M.</strong> and Yapiyev, V. Cryosphere–groundwater connectivity is a missing link in the mountain water cycle. <em>Nature Water</em><a href="https://insu.hal.science/insu-04598411/document" style="color:#000080;"> [Link]</a></p><br> -->
 							<!--   <p>Schmeller, D.S., <strong>Thornton, J.M.,</strong> Alexander, J., Jetz, W., Kulonen, A., Mills, R.T.E., Notornicola, C., Palazzi, E., Pauli, H., Randin, C., Rosbakh, S., Sayre, R., Tehrani, N.A., Urbach, D., Verbiest, W.W.M., Walker, T.W.N., Wipf, S. and Adler, C. Towards a set of Essential Biodiversity Variables as a global framework for assessing change in mountains. <em>BioScience</em><a href="https://apps.crossref.org/pendingpub/pendingpub.html?doi=10.1093%2Fbiosci%2Fbiae052" style="color:#000080;"> [Link]</a></p><br> -->
@@ -322,13 +436,16 @@
 			<!-- end portfolio section -->
 
 			<!-- Testimonial section -->
+			
+
+
 			<section id="experience" class="parallax">
 				<div class="overlay">
 					<div class="container">
 						<div class="row">
 						
 							<div class="sec-title text-center white wow animated fadeInDown" style="font-size: 2.5rem;">
-								<p><strong>Professional Experience & Education:</strong></p>
+								<p><strong>Professional Experience & Education</strong></p>
 							</div>
 
 							<div id="testimonial" class=" wow animated fadeInUp">
@@ -392,84 +509,189 @@
 			</section>
 			<!-- end Testimonial section -->
 
-			<!-- Publications section -->
-			<section id="outreach">
+            <section id="contributions">
 				<div class="container">
 					<div class="row">
-					
-						<div class="sec-title text-center">
-							<h2 class="wow animated bounceInLeft">Presentations & Outreach</h2>
-							<p class="wow animated bounceInRight" style="font-size: 2.5rem;"><strong>Other Contributions:</strong></p>
+							<div class="sec-title text-center wow animated fadeInDown" style="font-size: 2.5rem;">
+							<p><strong>Professional Contributions</strong></p>
 						</div>
-						
-						<i style="font-size: 2.3rem;">Selected Presentations:</i><br>
-						<ul>
-						<p>
-						&nbsp;&nbsp; <li>2024: <a href="https://drive.google.com/file/d/1kaRq2ukosXzj9I5t3F7oc_wlSW9KJm_9/view" style="color:#000080;">The Unified High Elevation Observation Platform (UHOP): A proposed protocol for monitoring environmental changes over elevation gradients</a>, AGU Fall Meeting 2024, December 2024, Washington D.C, USA (poster)<br>
-						<!--&nbsp;&nbsp; <li>2024: Evaluating landslide susceptibility using Google Earth Engine, GEO Open Data & Open Knowledge Workshop 2024, September 2024, Hangzhou, China <br>-->
-						&nbsp;&nbsp; <li>2023: Quantifying in situ climatological data coverage and human population dynamics across the mountains of Africa, World Climate Research Programme (WCRP) Open Science Conference 2023, Kigali, Rwanda <br>
-						&nbsp;&nbsp; <li>2023: <a href="" style="color:#000080;">A global, cross-disciplinary inventory of mountain monitoring infrastructure</a>, EGU 2023, Vienna, Austria (poster)<br>
-						&nbsp;&nbsp; <li>2022: <a href="https://www.icimod.org/wp-content/uploads/Thornton_compressed.pdf" style="color:#000080;">Quantifying in situ climatological data coverage and human population dynamics across High Mountain Asia</a>, Cryosphere and Related Hazards in High Mountain Asia in a Changing Climate Conference, Almaty, Kazakhstan<br>
-						&nbsp;&nbsp; <li>2022: <a href="https://www.youtube.com/watch?v=OR3-5x9ud3k&t=25863s" style="color:#000080;">Coverage of in situ climatological observations in the world’s mountains</a>, 2<sup>nd</sup> GCOS Climate Observation Conference, Darmstadt, Germany<br>
-						&nbsp;&nbsp; <li>2022: Human populations in the world’s mountains: patterns and potential controls, World Biodiversity Forum, Davos, Switzerland <br>
-						&nbsp;&nbsp; <li>2021: <a href="https://gecryohub.ch/session/earth-observations-for-monitoring-climate-change-impacts-in-mountain-regions" style="color:#000080;">Integrated mountain science: Identifying monitoring priorities and improving discoverability and accessibility of in situ data</a>, COP26 Geneva Cryosphere Hub, Geneva, Switzerland<br>
-						&nbsp;&nbsp; <li>2021: <a href="https://mountainresearchinitiative.org/lectures-webinars/toward-a-definition-of-essential-mountain-climate-variables/" style="color:#000080;">Toward a definition of Essential Mountain Climate Variables</a>, MRI 20<sup>th</sup> Anniversary Lecture Series, Bern, Switzerland<br>
-						&nbsp;&nbsp; <li>2020: <a href="https://drive.google.com/file/d/1mcIZPkk_aIA9TzEUbFGL1oWR2Osk1Z1A/view?usp=sharing" style="color:#000080;">Fully-integrated surface-subsurface hydrological modelling in steep, geologically complex, snow-dominated Alpine terrain</a>, Swiss Geosciences Meeting 2020, Zurich, Switzerland<br>
-						&nbsp;&nbsp; <li>2020: Efficient multi-objective calibration and uncertainty analysis of distributed snow simulations in rugged alpine terrain, SnowHydro 2020, Bolzano, Italy<br>
-						&nbsp;&nbsp; <li>2016: Advancing the science of flood modelling: JBA’s new multi-peril probabilistic flood model of the UK, UK Flood: State of the Nation, London, UK<br>
-						&nbsp;&nbsp; <li>2015: Estimating hypothetical present-day insured losses for past intense hurricanes in the French Antilles, EGU 2015, Vienna, Austria (poster)<br>
-						&nbsp;&nbsp; <li>2013: Predicting extreme wind speeds on a tropical island for multi-peril catastrophe modelling, EGU 2013, Vienna, Austria<br>
-						</p>
-						</ul>
-						<br>
-						
 
-						<i style="font-size: 2.3rem;">Service & Distinctions:</i><br>
-						<ul>
-						<p>
-						&nbsp;&nbsp; <li>2024: Local Scientific Organising Committee Member, <a href="https://www.iah2024davos.org/" style="color:#000080;"> World Groundwater Congress IAH2024</a>, Davos, Switzerland [Recording: <a href="https://www.youtube.com/live/7HzxsF0vOUE?si=NeDXUj3FI0hOfs0a&t=1122" style="color:#000080;">"Mountain Cryosphere & Groundwater" Plenary Session</a>]<br style="line-height: 10px" />
-						&nbsp;&nbsp;<li>2023: <a href="https://futureearth.org/2023/03/02/future-earth-early-career-fellowship-awardees-announced/" style="color:#000080;"> Future Earth Early Career Fellowship</i></a>, which supports outstanding early-career scholars to pursue research related to sustainable development<br style="line-height: 10px" />
-						&nbsp;&nbsp; <li>2022: <a href=" https://agupubs.onlinelibrary.wiley.com/doi/toc/10.1002/(ISSN)1944-7973.editors-choice" style="color:#000080;">WRR Editors’ Choice Award</a>, indicating extremely high quality and significance (paper considered by the Editors of Water Resources Research to be in the top ~1% of the journal's papers published in that calendar year)<br style="line-height: 10px" />
-						&nbsp;&nbsp;<li>2022: <a href="https://www.uibk.ac.at/en/newsroom/2022/imc-2022-800-mountain-researchers-met-in-innsbruck/" style="color:#000080;">Session Convenor, International Mountain Conference (IMC) 2022</a>, Innsbruck, Austria<br style="line-height: 10px" />
-						&nbsp;&nbsp;<li>Since 2022: <a href="https://www.earth-system-science-data.net/editorial_board.html" style="color:#000080;">Topical Editor, <i>Earth System Science Data</i></a><br style="line-height: 10px" />
-						&nbsp;&nbsp; <li>Since 2021: Fellow of the Royal Geographical Society (FRGS)<br style="line-height: 10px" />
-						&nbsp;&nbsp; <li>2021: Contributing Author, <a href="https://www.ipcc.ch/report/ar6/wg2/chapter/ccp5/" style="color:#000080;">Cross-Chapter Paper "Mountains"</a>, Intergovernmental Panel on Climate Change (WGII, AR6)<br style="line-height: 10px" />
-						&nbsp;&nbsp; <li>2020: <a href="https://www.unine.ch/actualites/evenements/remise-des-titres-et-prix-academiques/prix-academiques-et-laureat-e-s/prix-guebhard-severine" style="color:#000080;">Prix Adrien Gébhard-Séverine</a> for an excellent doctoral thesis in hydrogeology, Faculty of Science, University of Neuchâtel<br style="line-height: 10px" />
-						&nbsp;&nbsp;<li>Since 2016: Regular reviewer for several leading journals including <i>Water Resources Research, Nature Water, Journal of Hydrology, One Earth, Groundwater & Scientific Data</i><br style="line-height: 10px" />
-						&nbsp;&nbsp; <li>2012: The Haggett Prize for best performance in final undergraduate examinations, School of Geographical Sciences, University of Bristol<br style="line-height: 10px" />
-						&nbsp;&nbsp; <li>2011: Level 5 Award in Management and Leadership (Chartered Management Institute, UK)<br style="line-height: 10px" /><br>
-						</p>
-						</ul>
+            <div class="accordion-container">
+                <!-- Selected Presentations -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Selected Presentations</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="presentation-entry">
+                                <span class="year">2024:</span> <a href="https://drive.google.com/file/d/1kaRq2ukosXzj9I5t3F7oc_wlSW9KJm_9/view">The Unified High Elevation Observation Platform (UHOP): A proposed protocol for monitoring environmental changes over elevation gradients</a>, AGU Fall Meeting 2024, December 2024, Washington D.C, USA (poster)<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2023:</span> Quantifying in situ climatological data coverage and human population dynamics across the mountains of Africa, World Climate Research Programme (WCRP) Open Science Conference 2023, Kigali, Rwanda<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2023:</span> <a href="">A global, cross-disciplinary inventory of mountain monitoring infrastructure</a>, EGU 2023, Vienna, Austria (poster)<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2022:</span> <a href="https://www.icimod.org/wp-content/uploads/Thornton_compressed.pdf">Quantifying in situ climatological data coverage and human population dynamics across High Mountain Asia</a>, Cryosphere and Related Hazards in High Mountain Asia in a Changing Climate Conference, Almaty, Kazakhstan<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2022:</span> <a href="https://www.youtube.com/watch?v=OR3-5x9ud3k&t=25863s">Coverage of in situ climatological observations in the world's mountains</a>, 2<sup>nd</sup> GCOS Climate Observation Conference, Darmstadt, Germany<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2022:</span> Human populations in the world's mountains: patterns and potential controls, World Biodiversity Forum, Davos, Switzerland<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2021:</span> <a href="https://gecryohub.ch/session/earth-observations-for-monitoring-climate-change-impacts-in-mountain-regions">Integrated mountain science: Identifying monitoring priorities and improving discoverability and accessibility of in situ data</a>, COP26 Geneva Cryosphere Hub, Geneva, Switzerland<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2021:</span> <a href="https://mountainresearchinitiative.org/lectures-webinars/toward-a-definition-of-essential-mountain-climate-variables/">Toward a definition of Essential Mountain Climate Variables</a>, MRI 20<sup>th</sup> Anniversary Lecture Series, Bern, Switzerland<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2020:</span> <a href="https://drive.google.com/file/d/1mcIZPkk_aIA9TzEUbFGL1oWR2Osk1Z1A/view?usp=sharing">Fully-integrated surface-subsurface hydrological modelling in steep, geologically complex, snow-dominated Alpine terrain</a>, Swiss Geosciences Meeting 2020, Zurich, Switzerland<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2020:</span> Efficient multi-objective calibration and uncertainty analysis of distributed snow simulations in rugged alpine terrain, SnowHydro 2020, Bolzano, Italy<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2016:</span> Advancing the science of flood modelling: JBA's new multi-peril probabilistic flood model of the UK, UK Flood: State of the Nation, London, UK<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2015:</span> Estimating hypothetical present-day insured losses for past intense hurricanes in the French Antilles, EGU 2015, Vienna, Austria (poster)<br>
+                            </div>
+                            <div class="presentation-entry">
+                                <span class="year">2013:</span> Predicting extreme wind speeds on a tropical island for multi-peril catastrophe modelling, EGU 2013, Vienna, Austria<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-						<i style="font-size: 2.3rem;">Policy & Outreach:</i><br>
-						<ul>
-						<p>
-						&nbsp;&nbsp; <li>2025: <a href="https://zenodo.org/records/17086383" style="color:#000080;">GEO Mountains In Situ Inventory v3 </a><br>
-						&nbsp;&nbsp; <li>2025: <a href="https://unesdoc.unesco.org/ark:/48223/pf0000393070" style="color:#000080;">The United Nations World Water Development Report 2025 – Mountains and glaciers: water towers </a> (Contributor)<br>
-						&nbsp;&nbsp; <li>2025: <a href="https://preview.earthobservations.org/about-us/news/adapting-inevitable-how-data-can-drive-resilience-mountain-regions" style="color:#000080;">Adapting to the inevitable: How data can drive resilience in mountain regions</a><br>
-						&nbsp;&nbsp; <li>2025: <a href="https://mountainresearchinitiative.org/blog/los-nevados-no-longer/" style="color:#000080;">Los Nevados No Longer?</a><br>
-						&nbsp;&nbsp; <li>2024: <a href="https://doi.org/10.48620/77051" style="color:#000080;">Proposal for the Unified High Elevation Observing Platform (UHOP), v1.0</a><br>
-						&nbsp;&nbsp; <li>2024: <a href="https://www.youtube.com/watch?v=yZ_W4hU3r_U" style="color:#000080;">Adaptation at Altitude – Taking Action in the Mountains</a><br>
-						<!-- &nbsp;&nbsp; <li>2024: <a href="https://mountainresearchinitiative.org/blog/in-the-field-with-geo-mountains-a-reflective-journey-across-the-caucasus-central-asian-east-africa-himalayas-and-andes-mountains/" style="color:#000080;">In the field with GEO Mountains</a><br>-->
-						&nbsp;&nbsp; <li>2023–2024: Lead organiser & facilitator of five major in-person workshops under GEO Mountains' <i>Interdisciplinary Monitoring, Data & Capacity Sharing</i> series (Andes, Caucasus, Central Asia, East Africa & Hindu Kush Himalaya)</a><br>
-						&nbsp;&nbsp; <li>2023: <a href="https://wedocs.unep.org/bitstream/handle/20.500.11822/43838/AGR23_case_study_04.pdf?sequence=3&isAllowed=y" style="color:#000080;">Mountains in silent thaw: Losses and damages from the disappearing “frozen heartbeat” of Earth</a><br>
-						&nbsp;&nbsp; <li>2023: <a href="https://zenodo.org/record/8010166" style="color:#000080;">The <i>Mountains Uncovered</i> Series</a><br>
-						&nbsp;&nbsp; <li>2022: <a href="https://boris-portal.unibe.ch/entities/publication/7c0b74a6-3465-4dec-80d8-7633dee94173" style="color:#000080;">Mountain Observations Policy Brief</i></a><br>
-						&nbsp;&nbsp; <li>2022: <a href="https://earthobservations.org/news/estimating-worlds-mountain-populations" style="color:#000080;">Estimating the world’s mountain populations</a><br>
-						&nbsp;&nbsp; <li>2022: <a href="https://earthobservations.org/news/mountain-case-study-boosts-understanding-situ-monitoring-network-coverage" style="color:#000080;">Mountain case study boosts understanding of in situ monitoring network coverage</a><br>
-						&nbsp;&nbsp; <li>2021: <a href="https://mountainresearchinitiative.org/blog/tackling-the-ultimate-challenge-in-greater-depth/" style="color:#000080;">Tackling “the Ultimate Challenge” in Greater Depth</a>
-						</p>
-					</div>
-				</div>
-			</section>
+                <!-- Service & Distinctions -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Service & Distinctions</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="service-entry">
+                                <span class="year">2024:</span> Local Scientific Organising Committee Member, <a href="https://www.iah2024davos.org/">World Groundwater Congress IAH2024</a>, Davos, Switzerland [Recording: <a href="https://www.youtube.com/live/7HzxsF0vOUE?si=NeDXUj3FI0hOfs0a&t=1122">"Mountain Cryosphere & Groundwater" Plenary Session</a>]<br style="line-height: 10px" />
+                            </div>
+                            <div class="service-entry">
+                                <span class="year">2023:</span> <a href="https://futureearth.org/2023/03/02/future-earth-early-career-fellowship-awardees-announced/">Future Earth Early Career Fellowship</a>, which supports outstanding early-career scholars to pursue research related to sustainable development<br style="line-height: 10px" />
+                            </div>
+                            <div class="service-entry">
+                                <span class="year">2022:</span> <a href="https://agupubs.onlinelibrary.wiley.com/doi/toc/10.1002/(ISSN)1944-7973.editors-choice">WRR Editors' Choice Award</a>, indicating extremely high quality and significance (paper considered by the Editors of Water Resources Research to be in the top ~1% of the journal's papers published in that calendar year)<br style="line-height: 10px" />
+                            </div>
+                            <div class="service-entry">
+                                <span class="year">2022:</span> <a href="https://www.uibk.ac.at/en/newsroom/2022/imc-2022-800-mountain-researchers-met-in-innsbruck/">Session Convenor, International Mountain Conference (IMC) 2022</a>, Innsbruck, Austria<br style="line-height: 10px" />
+                            </div>
+                            <div class="service-entry">
+                                <span class="year">Since 2022:</span> <a href="https://www.earth-system-science-data.net/editorial_board.html">Topical Editor, <em>Earth System Science Data</em></a><br style="line-height: 10px" />
+                            </div>
+                            <div class="service-entry">
+                                <span class="year">Since 2021:</span> Fellow of the Royal Geographical Society (FRGS)<br style="line-height: 10px" />
+                            </div>
+                            <div class="service-entry">
+                                <span class="year">2021:</span> Contributing Author, <a href="https://www.ipcc.ch/report/ar6/wg2/chapter/ccp5/">Cross-Chapter Paper "Mountains"</a>, Intergovernmental Panel on Climate Change (WGII, AR6)<br style="line-height: 10px" />
+                            </div>
+                            <div class="service-entry">
+                                <span class="year">2020:</span> <a href="https://www.unine.ch/actualites/evenements/remise-des-titres-et-prix-academiques/prix-academiques-et-laureat-e-s/prix-guebhard-severine">Prix Adrien Gébhard-Séverine</a> for an excellent doctoral thesis in hydrogeology, Faculty of Science, University of Neuchâtel<br style="line-height: 10px" />
+                            </div>
+                            <div class="service-entry">
+                                <span class="year">Since 2016:</span> Regular reviewer for several leading journals including <em>Water Resources Research, Nature Water, Journal of Hydrology, One Earth, Groundwater & Scientific Data</em><br style="line-height: 10px" />
+                            </div>
+                            <div class="service-entry">
+                                <span class="year">2012:</span> The Haggett Prize for best performance in final undergraduate examinations, School of Geographical Sciences, University of Bristol<br style="line-height: 10px" />
+                            </div>
+                            <div class="service-entry">
+                                <span class="year">2011:</span> Level 5 Award in Management and Leadership (Chartered Management Institute, UK)<br style="line-height: 10px" /><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Policy & Outreach -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Policy & Outreach</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="policy-entry">
+                                <span class="year">2025:</span> <a href="https://zenodo.org/records/17086383">GEO Mountains In Situ Inventory v3</a>
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2025:</span> <a href="https://unesdoc.unesco.org/ark:/48223/pf0000393070">The United Nations World Water Development Report 2025 – Mountains and glaciers: water towers</a> (Contributor)
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2025:</span> <a href="https://preview.earthobservations.org/about-us/news/adapting-inevitable-how-data-can-drive-resilience-mountain-regions">Adapting to the inevitable: How data can drive resilience in mountain regions</a>
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2025:</span> <a href="https://mountainresearchinitiative.org/blog/los-nevados-no-longer/">Los Nevados No Longer?</a>
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2024:</span> <a href="https://doi.org/10.48620/77051">Proposal for the Unified High Elevation Observing Platform (UHOP), v1.0</a>
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2024:</span> <a href="https://www.youtube.com/watch?v=yZ_W4hU3r_U">Adaptation at Altitude – Taking Action in the Mountains</a>
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2023–2024:</span> Lead organiser & facilitator of five major in-person workshops under GEO Mountains' <em>Interdisciplinary Monitoring, Data & Capacity Sharing</em> series (Andes, Caucasus, Central Asia, East Africa & Hindu Kush Himalaya)
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2023:</span> <a href="https://wedocs.unep.org/bitstream/handle/20.500.11822/43838/AGR23_case_study_04.pdf?sequence=3&isAllowed=y">Mountains in silent thaw: Losses and damages from the disappearing "frozen heartbeat" of Earth</a>
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2023:</span> <a href="https://zenodo.org/record/8010166">The <em>Mountains Uncovered</em> Series</a>
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2022:</span> <a href="https://boris-portal.unibe.ch/entities/publication/7c0b74a6-3465-4dec-80d8-7633dee94173">Mountain Observations Policy Brief</a>
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2022:</span> <a href="https://earthobservations.org/news/estimating-worlds-mountain-populations">Estimating the world's mountain populations</a>
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2022:</span> <a href="https://earthobservations.org/news/mountain-case-study-boosts-understanding-situ-monitoring-network-coverage">Mountain case study boosts understanding of in situ monitoring network coverage</a>
+                            </div>
+                            <div class="policy-entry">
+                                <span class="year">2021:</span> <a href="https://mountainresearchinitiative.org/blog/tackling-the-ultimate-challenge-in-greater-depth/">Tackling "the Ultimate Challenge" in Greater Depth</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all accordion items
+                document.querySelectorAll('.accordion-item').forEach(accordionItem => {
+                    accordionItem.classList.remove('active');
+                });
+                
+                // If this item wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
 			<!-- end Service section -->
 			<!-- Code section -->
 			<section id="projects">
 				<div class="container">
 					<div class="row">
 							<div class="sec-title text-center wow animated fadeInDown" style="font-size: 2.5rem;">
-							<h2>Projects</h2>
-							<p><strong>Selected Projects:</strong></p>
+							<p><strong>Selected Projects</strong></p>
 					</div>
 						
 
@@ -515,8 +737,7 @@
 			<div class="container">
 					<div class="row">
 							<div class="sec-title text-center wow animated fadeInDown" style="font-size: 2.5rem;">
-							<h2>Contact</h2>
-							<p><strong>Contact:</strong></p>
+							<p><strong>Contact</strong></p>
 					</div>
 						
 						<div class="sec-title text-center wow animated fadeInDown">
