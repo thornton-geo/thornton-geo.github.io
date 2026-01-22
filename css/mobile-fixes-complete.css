@@ -1,6 +1,6 @@
 /* =================================== */
-/* REFINED MOBILE FIXES - VERSION 7 */
-/* Replace mobile-fixes-complete-v6.css with this version */
+/* REFINED MOBILE FIXES - VERSION 8 */
+/* Replace mobile-fixes-complete-v7.css with this version */
 /* =================================== */
 
 /* Desktop - keep everything as is */
@@ -57,32 +57,36 @@
     
     /* Larger text in Experience section */
     #experience .testimonial-item span {
-        font-size: 2.4rem !important;
+        font-size: 2.1rem !important;
     }
     
     #experience .testimonial-item p {
-        font-size: 2.2rem !important;
+        font-size: 1.9rem !important;
     }
 }
 
 /* Mobile screens (up to 768px) */
 @media (max-width: 768px) {
     
-    /* ==================== FIX 1: Name positioning ==================== */
+    /* ==================== FIX: Hide main name on mobile (keep in nav) ==================== */
     
     .caption-content h2 {
+        opacity: 0 !important; /* CHANGED: Hide the main name */
         font-size: 3rem !important;
         font-weight: 700 !important;
         margin-bottom: 50px !important;
         margin-top: 0 !important;
+        height: 0 !important; /* ADDED: Remove space it takes up */
+        overflow: hidden !important; /* ADDED: Ensure it takes no space */
+        margin: 0 !important; /* ADDED: Remove all margins */
     }
     
-    /* Move credentials down EVEN MORE (but keep Topical Editor in place) */
+    /* Move credentials up since name is hidden */
     .caption-content h3.credentials-line {
         font-size: 2rem !important;
         line-height: 1.6 !important;
         margin-bottom: 20px !important;
-        margin-top: 80px !important;
+        margin-top: 0px !important; /* CHANGED: No top margin since name is hidden */
     }
     
     /* Keep affiliations line (Topical Editor) in its current position */
@@ -97,7 +101,7 @@
         font-size: 2rem !important;
         line-height: 1.6 !important;
         margin-bottom: 20px !important;
-        margin-top: 80px !important;
+        margin-top: 0px !important; /* CHANGED: No extra margin */
     }
     
     .caption-content h4 {
@@ -125,7 +129,7 @@
         display: none;
     }
     
-    /* ==================== FIX 3: Photo centered, text below (separated) ==================== */
+    /* ==================== FIX 3: Photo centered, text below - LARGER (25% increase) ==================== */
     
     #about {
         padding-top: 50px;
@@ -137,12 +141,12 @@
         text-align: center;
     }
     
-    /* Photo first, centered, with good spacing below */
+    /* Photo first, centered, with good spacing below - 25% LARGER */
     #about .welcome-block img {
         float: none !important;
         display: block !important;
         margin: 0 auto 40px !important;
-        max-width: 160px !important;
+        max-width: 200px !important; /* CHANGED: 160px * 1.25 = 200px */
     }
     
     /* Text starts cleanly below photo */
@@ -185,12 +189,12 @@
     
     /* INCREASED space after section header before logos - prevents cutoff */
     #experience .sec-title {
-        margin-bottom: 110px !important; /* INCREASED from 90px */
+        margin-bottom: 110px !important;
     }
     
     /* Add more padding to testimonial container to prevent cutoff */
     #testimonial {
-        padding-top: 50px !important; /* INCREASED from 30px */
+        padding-top: 50px !important;
         position: relative !important;
         z-index: 10 !important;
     }
@@ -199,12 +203,12 @@
     .testimonial-item {
         position: relative !important;
         z-index: 15 !important;
-        padding-top: 20px !important; /* ADDED: Extra padding at top of each item */
+        padding-top: 20px !important;
     }
     
     /* Make sure images have room at top */
     .testimonial-item img {
-        margin-top: 10px !important; /* ADDED: Extra margin above images */
+        margin-top: 10px !important;
     }
     
     /* Center navigation arrows with reduced width */
@@ -247,19 +251,19 @@
     /* Ensure overlay covers entire section */
     #experience {
         position: relative !important;
-        overflow: visible !important; /* CHANGED: Allow content to extend if needed */
+        overflow: visible !important;
     }
     
     /* ==================== FIX 4d: LARGER text in Experience section ==================== */
     
     .testimonial-item span {
-        font-size: 2.1rem !important; /* INCREASED from 1.9rem */
+        font-size: 2.1rem !important;
         display: block;
         margin-bottom: 10px;
     }
     
     .testimonial-item p {
-        font-size: 1.9rem !important; /* INCREASED from 1.7rem */
+        font-size: 1.9rem !important;
         line-height: 1.5;
     }
     
@@ -351,31 +355,33 @@
 /* Small mobile screens (up to 480px) */
 @media (max-width: 480px) {
     
-    /* ==================== Smaller text sizes ==================== */
+    /* ==================== Name still hidden on small screens ==================== */
     
     .caption-content h2 {
+        opacity: 0 !important;
         font-size: 2.4rem !important;
-        margin-bottom: 40px !important;
-        margin-top: 0 !important;
+        margin: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
     }
     
     .caption-content h3.credentials-line,
     .caption-content h3 {
         font-size: 1.6rem !important;
-        margin-top: 70px !important;
+        margin-top: 0px !important; /* No margin since name hidden */
     }
     
     .caption-content h4 {
         font-size: 1.3rem !important;
     }
     
-    /* ==================== Photo completely stacked ==================== */
+    /* ==================== Photo still larger on small screens ==================== */
     
     #about .welcome-block img {
         float: none !important;
         display: block !important;
         margin: 0 auto 35px !important;
-        max-width: 140px !important;
+        max-width: 175px !important; /* CHANGED: 140px * 1.25 = 175px */
     }
     
     #about .message-body {
@@ -421,11 +427,11 @@
     /* ==================== Experience text still readable on small screens ==================== */
     
     .testimonial-item span {
-        font-size: 1.8rem !important; /* Slightly smaller but still larger than before */
+        font-size: 1.8rem !important;
     }
     
     .testimonial-item p {
-        font-size: 1.6rem !important; /* Slightly smaller but still larger than before */
+        font-size: 1.6rem !important;
     }
     
     /* ==================== Tighter spacing ==================== */
@@ -486,15 +492,17 @@
 /* ==================== Landscape phone orientation ==================== */
 @media (max-width: 768px) and (orientation: landscape) {
     
+    /* Name still hidden in landscape */
     .caption-content h2 {
-        font-size: 2.5rem !important;
-        margin-bottom: 40px !important;
-        margin-top: 0 !important;
+        opacity: 0 !important;
+        margin: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
     }
     
     .caption-content h3 {
         font-size: 1.7rem !important;
-        margin-top: 60px !important;
+        margin-top: 0px !important;
     }
     
     .caption-content h4 {
@@ -513,6 +521,11 @@
     #about .message-body p,
     #about .message-body ul li {
         font-size: 1.7rem !important;
+    }
+    
+    /* Photo larger in landscape too */
+    #about .welcome-block img {
+        max-width: 190px !important;
     }
     
     .accordion-header h3,
