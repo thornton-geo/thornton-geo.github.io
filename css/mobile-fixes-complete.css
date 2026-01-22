@@ -57,11 +57,11 @@
     
     /* Larger text in Experience section */
     #experience .testimonial-item span {
-        font-size: 2.1rem !important;
+        font-size: 2.4rem !important;
     }
     
     #experience .testimonial-item p {
-        font-size: 1.9rem !important;
+        font-size: 2.2rem !important;
     }
 }
 
