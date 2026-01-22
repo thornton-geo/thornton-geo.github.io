@@ -1,6 +1,6 @@
 /* =================================== */
-/* REFINED MOBILE FIXES - VERSION 6 */
-/* Replace mobile-fixes-complete-v5.css with this version */
+/* REFINED MOBILE FIXES - VERSION 7 */
+/* Replace mobile-fixes-complete-v6.css with this version */
 /* =================================== */
 
 /* Desktop - keep everything as is */
@@ -53,6 +53,15 @@
     /* Increase body text size */
     body, p, li {
         font-size: 19px !important;
+    }
+    
+    /* Larger text in Experience section */
+    #experience .testimonial-item span {
+        font-size: 2.1rem !important;
+    }
+    
+    #experience .testimonial-item p {
+        font-size: 1.9rem !important;
     }
 }
 
@@ -172,24 +181,30 @@
         margin-left: -40px !important;
     }
     
-    /* ==================== FIX 4b: Experience section - spacing and logos on top ==================== */
+    /* ==================== FIX 4b: Experience section - MORE spacing to prevent logo cutoff ==================== */
     
-    /* INCREASED space after section header before logos */
+    /* INCREASED space after section header before logos - prevents cutoff */
     #experience .sec-title {
-        margin-bottom: 90px !important;
+        margin-bottom: 110px !important; /* INCREASED from 90px */
     }
     
-    /* Also add padding to testimonial container */
+    /* Add more padding to testimonial container to prevent cutoff */
     #testimonial {
-        padding-top: 30px !important;
+        padding-top: 50px !important; /* INCREASED from 30px */
         position: relative !important;
-        z-index: 10 !important; /* Force logos above overlay */
+        z-index: 10 !important;
     }
     
-    /* Ensure testimonial items are above overlay */
+    /* Ensure testimonial items are above overlay with MORE room */
     .testimonial-item {
         position: relative !important;
-        z-index: 15 !important; /* Even higher z-index for logos */
+        z-index: 15 !important;
+        padding-top: 20px !important; /* ADDED: Extra padding at top of each item */
+    }
+    
+    /* Make sure images have room at top */
+    .testimonial-item img {
+        margin-top: 10px !important; /* ADDED: Extra margin above images */
     }
     
     /* Center navigation arrows with reduced width */
@@ -204,7 +219,7 @@
         width: auto;
         padding: 1px 12px 5px;
         position: relative !important;
-        z-index: 20 !important; /* Arrows on top too */
+        z-index: 20 !important;
     }
     
     /* Center the arrows container */
@@ -226,12 +241,26 @@
         background-color: rgba(135, 206, 235, 0.78) !important;
         padding: 70px 0 40px !important;
         position: relative !important;
-        z-index: 5 !important; /* Overlay below content */
+        z-index: 5 !important;
     }
     
     /* Ensure overlay covers entire section */
     #experience {
         position: relative !important;
+        overflow: visible !important; /* CHANGED: Allow content to extend if needed */
+    }
+    
+    /* ==================== FIX 4d: LARGER text in Experience section ==================== */
+    
+    .testimonial-item span {
+        font-size: 2.1rem !important; /* INCREASED from 1.9rem */
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .testimonial-item p {
+        font-size: 1.9rem !important; /* INCREASED from 1.7rem */
+        line-height: 1.5;
     }
     
     /* ==================== FIX 5: LARGER accordion section headers (subheaders) ==================== */
@@ -313,17 +342,6 @@
         margin: 0 auto 20px;
     }
     
-    .testimonial-item p {
-        font-size: 1.7rem !important;
-        line-height: 1.5;
-    }
-    
-    .testimonial-item span {
-        font-size: 1.9rem !important;
-        display: block;
-        margin-bottom: 10px;
-    }
-    
     /* Ensure proper spacing */
     main > section {
         padding: 50px 0;
@@ -387,9 +405,27 @@
         font-size: 1.7rem !important;
     }
     
-    /* Experience section spacing on small screens */
+    /* Experience section spacing on small screens - still prevent cutoff */
     #experience .sec-title {
-        margin-bottom: 80px !important;
+        margin-bottom: 100px !important;
+    }
+    
+    #testimonial {
+        padding-top: 40px !important;
+    }
+    
+    .testimonial-item {
+        padding-top: 15px !important;
+    }
+    
+    /* ==================== Experience text still readable on small screens ==================== */
+    
+    .testimonial-item span {
+        font-size: 1.8rem !important; /* Slightly smaller but still larger than before */
+    }
+    
+    .testimonial-item p {
+        font-size: 1.6rem !important; /* Slightly smaller but still larger than before */
     }
     
     /* ==================== Tighter spacing ==================== */
@@ -421,14 +457,6 @@
     
     .testimonial-item img {
         max-width: 150px;
-    }
-    
-    .testimonial-item span {
-        font-size: 1.7rem !important;
-    }
-    
-    .testimonial-item p {
-        font-size: 1.5rem !important;
     }
     
     /* ==================== Credentials ==================== */
@@ -490,5 +518,14 @@
     .accordion-header h3,
     .accordion-header h4 {
         font-size: 1.8rem !important;
+    }
+    
+    /* Experience text in landscape */
+    .testimonial-item span {
+        font-size: 1.9rem !important;
+    }
+    
+    .testimonial-item p {
+        font-size: 1.7rem !important;
     }
 }
