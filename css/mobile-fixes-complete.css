@@ -1,0 +1,328 @@
+/* =================================== */
+/* COMPLETE MOBILE FIXES */
+/* Add to bottom of main.css or link as separate stylesheet */
+/* =================================== */
+
+/* Desktop - keep everything as is */
+@media (min-width: 992px) {
+    /* Credentials display inline on desktop */
+    .credential-item,
+    .affiliation-item,
+    .separator {
+        display: inline;
+    }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) and (min-width: 769px) {
+    
+    /* Slightly larger headers */
+    .sec-title p strong {
+        font-size: 3.5rem !important;
+    }
+    
+    /* Add breathing room */
+    #publications .container,
+    #contributions .container,
+    #projects .container,
+    #contact .container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    
+    /* Keep credentials on one line for tablets */
+    .credential-item,
+    .affiliation-item,
+    .separator {
+        display: inline;
+    }
+}
+
+/* Mobile screens (up to 768px) */
+@media (max-width: 768px) {
+    
+    /* ==================== FIX 1: Name larger than credentials ==================== */
+    .caption-content h2 {
+        font-size: 3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .caption-content h3 {
+        font-size: 2rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .caption-content h4 {
+        font-size: 1.6rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* ==================== FIX 2: Each credential on its own line ==================== */
+    
+    /* Stack credentials vertically */
+    .credentials-line,
+    .affiliations-line {
+        display: block;
+        text-align: center;
+    }
+    
+    .credential-item,
+    .affiliation-item {
+        display: block;
+        margin: 8px 0;
+    }
+    
+    /* Hide separator bars on mobile */
+    .separator {
+        display: none;
+    }
+    
+    /* Alternative: if you want to keep the bars but on separate lines */
+    /* Uncomment this if preferred:
+    .separator {
+        display: none;
+    }
+    .credential-item::after,
+    .affiliation-item::after {
+        content: "";
+        display: block;
+        height: 8px;
+    }
+    */
+    
+    /* ==================== FIX 3: Intro text stays with photo ==================== */
+    
+    #about .welcome-block {
+        overflow: hidden;
+    }
+    
+    #about .welcome-block img {
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        max-width: 140px;
+    }
+    
+    #about .message-body {
+        overflow: visible;
+        margin-bottom: 30px;
+    }
+    
+    #about .message-body p {
+        margin-top: 0;
+        line-height: 1.8;
+        font-size: 1.6rem;
+        display: flow-root; /* Ensures proper text flow */
+    }
+    
+    /* ==================== FIX 4: Larger section headers ==================== */
+    
+    .sec-title p strong {
+        font-size: 3rem !important;
+        display: block;
+    }
+    
+    /* ==================== FIX 4b: Center navigation arrows ==================== */
+    
+    #experience .owl-buttons,
+    #testimonial .owl-buttons,
+    .owl-buttons {
+        float: none !important;
+        display: block !important;
+        text-align: center;
+        margin: 25px auto;
+        clear: both;
+        width: auto;
+    }
+    
+    /* ==================== FIX 5: White space on content sides ==================== */
+    
+    #publications .container,
+    #contributions .container,
+    #projects .container,
+    #contact .container {
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 100%;
+    }
+    
+    .project-wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .accordion-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .accordion-content-inner {
+        padding: 20px 15px;
+    }
+    
+    /* Portfolio items responsive */
+    .portfolio-item {
+        width: 48%;
+        margin: 0 1% 2% 1%;
+    }
+    
+    /* ==================== FIX 6: Footer background not zoomed/pixelated ==================== */
+    
+    #social.parallax {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important; /* Critical: prevents zoom effect on mobile */
+    }
+    
+    #social .overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 40px 0;
+    }
+    
+    /* ==================== Additional mobile refinements ==================== */
+    
+    .accordion-header h3,
+    .accordion-header h4 {
+        font-size: 1.5rem !important;
+        line-height: 1.4;
+    }
+    
+    .testimonial-item img {
+        max-width: 200px;
+        height: auto;
+        margin: 0 auto 15px;
+    }
+    
+    .testimonial-item p {
+        font-size: 1.6rem;
+        line-height: 1.5;
+    }
+    
+    .testimonial-item span {
+        font-size: 1.8rem;
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    /* Ensure proper spacing */
+    main > section {
+        padding: 50px 0;
+    }
+}
+
+/* Small mobile screens (up to 480px) */
+@media (max-width: 480px) {
+    
+    /* ==================== Smaller text sizes ==================== */
+    
+    .caption-content h2 {
+        font-size: 2.4rem !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .caption-content h3 {
+        font-size: 1.6rem !important;
+    }
+    
+    .caption-content h4 {
+        font-size: 1.3rem !important;
+    }
+    
+    /* ==================== Stack photo completely ==================== */
+    
+    #about .welcome-block img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+        max-width: 160px;
+    }
+    
+    #about .message-body {
+        text-align: left;
+    }
+    
+    #about .message-body p {
+        font-size: 1.4rem;
+    }
+    
+    /* ==================== Smaller section headers ==================== */
+    
+    .sec-title p strong {
+        font-size: 2.4rem !important;
+    }
+    
+    .accordion-header h3,
+    .accordion-header h4 {
+        font-size: 1.2rem !important;
+    }
+    
+    /* ==================== Tighter spacing ==================== */
+    
+    #publications .container,
+    #contributions .container,
+    #projects .container,
+    #contact .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .accordion-content-inner {
+        padding: 15px 10px;
+    }
+    
+    /* ==================== Full-width portfolio on tiny screens ==================== */
+    
+    .portfolio-item {
+        width: 100%;
+        margin: 0 0 3% 0;
+    }
+    
+    /* ==================== Smaller experience logos ==================== */
+    
+    .testimonial-item img {
+        max-width: 150px;
+    }
+    
+    .testimonial-item span {
+        font-size: 1.6rem;
+    }
+    
+    .testimonial-item p {
+        font-size: 1.4rem;
+    }
+    
+    /* ==================== Credentials - extra tight ==================== */
+    
+    .credential-item,
+    .affiliation-item {
+        margin: 5px 0;
+        font-size: 1.5rem;
+    }
+    
+    main > section {
+        padding: 40px 0;
+    }
+}
+
+/* ==================== Landscape phone orientation ==================== */
+@media (max-width: 768px) and (orientation: landscape) {
+    
+    .caption-content h2 {
+        font-size: 2.5rem !important;
+    }
+    
+    .caption-content h3 {
+        font-size: 1.7rem !important;
+    }
+    
+    .caption-content h4 {
+        font-size: 1.4rem !important;
+    }
+    
+    .credential-item,
+    .affiliation-item {
+        margin: 5px 0;
+    }
+}
