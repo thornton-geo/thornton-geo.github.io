@@ -1,6 +1,6 @@
 /* =================================== */
-/* REFINED MOBILE FIXES - VERSION 3 */
-/* Replace mobile-fixes-complete-v2.css with this version */
+/* REFINED MOBILE FIXES - VERSION 4 */
+/* Replace mobile-fixes-complete-v3.css with this version */
 /* =================================== */
 
 /* Desktop - keep everything as is */
@@ -44,35 +44,52 @@
         background-attachment: scroll !important;
     }
     
-    /* Maintain overlay opacity on tablet */
+    /* Maintain overlay opacity on tablet - STRONGER */
     #experience .overlay {
-        background-color: rgba(0, 0, 0, 0.6) !important;
+        background-color: rgba(255, 255, 255, 0.85) !important;
+    }
+    
+    /* Increase body text size */
+    body, p, li {
+        font-size: 19px !important;
     }
 }
 
 /* Mobile screens (up to 768px) */
 @media (max-width: 768px) {
     
-    /* ==================== FIX 1: Name positioning and spacing ==================== */
+    /* ==================== FIX 1: Name positioning - remove excess padding ==================== */
     
-    /* Move name down slightly */
-    .slide-caption {
-        padding-top: 60px; /* ADDED: Pushes entire content block down */
-    }
+    /* REMOVED: slide-caption padding-top to fix positioning issue */
     
     .caption-content h2 {
         font-size: 3rem !important;
         font-weight: 700 !important;
         margin-bottom: 50px !important;
-        margin-top: 20px !important; /* ADDED: Extra space above name */
+        margin-top: 0 !important; /* REMOVED extra margin */
     }
     
-    /* Move credentials down more */
+    /* Move credentials down MORE (but keep Topical Editor in place) */
+    .caption-content h3.credentials-line {
+        font-size: 2rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+        margin-top: 60px !important; /* INCREASED from 30px */
+    }
+    
+    /* Keep affiliations line (Topical Editor) in its current position */
+    .caption-content h4.affiliations-line {
+        font-size: 1.6rem !important;
+        line-height: 1.5 !important;
+        margin-top: 0 !important; /* Keep where it is */
+    }
+    
+    /* Generic h3/h4 for backwards compatibility if classes aren't used */
     .caption-content h3 {
         font-size: 2rem !important;
         line-height: 1.6 !important;
         margin-bottom: 20px !important;
-        margin-top: 30px !important; /* ADDED: More space above credentials */
+        margin-top: 60px !important;
     }
     
     .caption-content h4 {
@@ -100,37 +117,46 @@
         display: none;
     }
     
-    /* ==================== FIX 3: Text appears 100px below photo ==================== */
+    /* ==================== FIX 3: Photo centered, text below (separated) ==================== */
+    
+    #about {
+        padding-top: 50px; /* Normal section padding */
+    }
     
     #about .welcome-block {
-        overflow: hidden;
+        overflow: visible; /* CHANGED */
         display: block;
+        text-align: center;
     }
     
+    /* Photo first, centered, with good spacing below */
     #about .welcome-block img {
-        float: none;
-        display: block;
-        margin: 0 auto 30px;
-        max-width: 160px;
+        float: none !important;
+        display: block !important;
+        margin: 0 auto 40px !important; /* CHANGED: Good spacing below photo */
+        max-width: 160px !important;
     }
     
+    /* Text starts cleanly below photo */
     #about .message-body {
-        clear: both;
-        overflow: visible;
-        margin-bottom: 30px;
-        margin-top: 100px; /* CHANGED: 100px space before text */
+        clear: both !important;
+        overflow: visible !important;
+        margin-bottom: 30px !important;
+        margin-top: 0 !important; /* REMOVED 100px - text flows naturally after photo */
+        text-align: left !important;
     }
     
+    /* Increase body text size */
     #about .message-body p {
-        margin-top: 0;
-        line-height: 1.8;
-        font-size: 1.8rem;
+        margin-top: 0 !important;
+        line-height: 1.8 !important;
+        font-size: 1.9rem !important; /* INCREASED from 1.8rem */
     }
     
-    /* Ensure bullet points are same size */
+    /* Ensure bullet points match body text size */
     #about .message-body ul li {
-        font-size: 1.8rem;
-        line-height: 1.8;
+        font-size: 1.9rem !important; /* INCREASED from 1.8rem */
+        line-height: 1.8 !important;
     }
     
     /* ==================== FIX 4: Larger section headers ==================== */
@@ -147,11 +173,16 @@
         margin-left: -40px !important;
     }
     
-    /* ==================== FIX 4b: Experience section spacing and overlay ==================== */
+    /* ==================== FIX 4b: Experience section - MORE spacing and STRONGER overlay ==================== */
     
-    /* Add space after section header before logos */
+    /* INCREASED space after section header before logos */
     #experience .sec-title {
-        margin-bottom: 70px !important; /* INCREASED from 50px */
+        margin-bottom: 90px !important; /* INCREASED from 70px to prevent logo cutoff */
+    }
+    
+    /* Also add padding to testimonial container */
+    #testimonial {
+        padding-top: 30px !important;
     }
     
     /* Center navigation arrows with reduced width */
@@ -173,7 +204,7 @@
         text-align: center;
     }
     
-    /* ==================== FIX 4c: Experience section background with proper overlay ==================== */
+    /* ==================== FIX 4c: Experience section - MUCH STRONGER overlay for readability ==================== */
     
     #experience.parallax {
         background-size: cover !important;
@@ -181,20 +212,27 @@
         background-attachment: scroll !important;
     }
     
+    /* STRONGER white overlay for better logo readability */
     #experience .overlay {
-        background-color: rgba(0, 0, 0, 0.6) !important; /* ADDED: Maintain opacity/tint */
+        background-color: rgba(255, 255, 255, 0.85) !important; /* CHANGED to white with high opacity */
+        padding: 50px 0 !important;
+    }
+    
+    /* Ensure overlay covers entire section */
+    #experience {
+        position: relative !important;
     }
     
     /* ==================== FIX 5: Larger accordion section headers ==================== */
     
     .accordion-header h3,
     .accordion-header h4 {
-        font-size: 1.8rem !important; /* INCREASED from 1.5rem */
+        font-size: 1.8rem !important;
         line-height: 1.4;
         font-weight: 600 !important;
     }
     
-    /* ==================== FIX 5: White space on content sides ==================== */
+    /* ==================== White space on content sides ==================== */
     
     #publications .container,
     #contributions .container,
@@ -204,7 +242,7 @@
         max-width: 100%;
     }
     
-    /* FIX: Contact section text 90% width */
+    /* Contact section text 90% width */
     #contact .container {
         padding-left: 5%;
         padding-right: 5%;
@@ -237,7 +275,7 @@
         margin: 0 1% 2% 1%;
     }
     
-    /* ==================== FIX 6: Footer background not zoomed/pixelated ==================== */
+    /* ==================== Footer background ==================== */
     
     #social.parallax {
         background-size: cover !important;
@@ -250,21 +288,27 @@
         padding: 40px 0;
     }
     
+    /* ==================== General text size increase ==================== */
+    
+    body, p, li, span {
+        font-size: 19px !important;
+    }
+    
     /* ==================== Additional mobile refinements ==================== */
     
     .testimonial-item img {
         max-width: 200px;
         height: auto;
-        margin: 0 auto 15px;
+        margin: 0 auto 20px; /* INCREASED spacing */
     }
     
     .testimonial-item p {
-        font-size: 1.6rem;
+        font-size: 1.7rem !important; /* INCREASED */
         line-height: 1.5;
     }
     
     .testimonial-item span {
-        font-size: 1.8rem;
+        font-size: 1.9rem !important; /* INCREASED */
         display: block;
         margin-bottom: 10px;
     }
@@ -280,19 +324,16 @@
     
     /* ==================== Smaller text sizes ==================== */
     
-    .slide-caption {
-        padding-top: 40px;
-    }
-    
     .caption-content h2 {
         font-size: 2.4rem !important;
         margin-bottom: 40px !important;
-        margin-top: 15px !important;
+        margin-top: 0 !important;
     }
     
+    .caption-content h3.credentials-line,
     .caption-content h3 {
         font-size: 1.6rem !important;
-        margin-top: 25px !important;
+        margin-top: 50px !important; /* Still moved down */
     }
     
     .caption-content h4 {
@@ -302,20 +343,20 @@
     /* ==================== Photo completely stacked ==================== */
     
     #about .welcome-block img {
-        float: none;
-        display: block;
-        margin: 0 auto 25px;
-        max-width: 140px;
+        float: none !important;
+        display: block !important;
+        margin: 0 auto 35px !important;
+        max-width: 140px !important;
     }
     
     #about .message-body {
-        text-align: left;
-        margin-top: 80px; /* Still good spacing on small screens */
+        text-align: left !important;
+        margin-top: 0 !important;
     }
     
     #about .message-body p,
     #about .message-body ul li {
-        font-size: 1.6rem;
+        font-size: 1.7rem !important; /* Still larger than before */
     }
     
     /* ==================== Smaller section headers ==================== */
@@ -332,12 +373,12 @@
     /* Accordion headers still readable on small screens */
     .accordion-header h3,
     .accordion-header h4 {
-        font-size: 1.5rem !important; /* Still larger than v2 */
+        font-size: 1.5rem !important;
     }
     
     /* Experience section spacing on small screens */
     #experience .sec-title {
-        margin-bottom: 60px !important;
+        margin-bottom: 80px !important;
     }
     
     /* ==================== Tighter spacing ==================== */
@@ -372,14 +413,14 @@
     }
     
     .testimonial-item span {
-        font-size: 1.6rem;
+        font-size: 1.7rem !important;
     }
     
     .testimonial-item p {
-        font-size: 1.4rem;
+        font-size: 1.5rem !important;
     }
     
-    /* ==================== Credentials - extra tight ==================== */
+    /* ==================== Credentials ==================== */
     
     .credential-item,
     .affiliation-item {
@@ -393,6 +434,11 @@
         padding: 1px 8px 5px !important;
     }
     
+    /* General text */
+    body, p, li, span {
+        font-size: 17px !important;
+    }
+    
     main > section {
         padding: 40px 0;
     }
@@ -401,19 +447,15 @@
 /* ==================== Landscape phone orientation ==================== */
 @media (max-width: 768px) and (orientation: landscape) {
     
-    .slide-caption {
-        padding-top: 40px;
-    }
-    
     .caption-content h2 {
         font-size: 2.5rem !important;
         margin-bottom: 40px !important;
-        margin-top: 15px !important;
+        margin-top: 0 !important;
     }
     
     .caption-content h3 {
         font-size: 1.7rem !important;
-        margin-top: 20px !important;
+        margin-top: 40px !important;
     }
     
     .caption-content h4 {
@@ -426,12 +468,12 @@
     }
     
     #about .message-body {
-        margin-top: 70px;
+        margin-top: 0 !important;
     }
     
     #about .message-body p,
     #about .message-body ul li {
-        font-size: 1.6rem;
+        font-size: 1.7rem !important;
     }
     
     .accordion-header h3,
