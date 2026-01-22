@@ -1,6 +1,6 @@
 /* =================================== */
-/* COMPLETE MOBILE FIXES */
-/* Add to bottom of main.css or link as separate stylesheet */
+/* REFINED MOBILE FIXES - VERSION 2 */
+/* Replace the previous mobile-fixes-complete.css with this version */
 /* =================================== */
 
 /* Desktop - keep everything as is */
@@ -36,6 +36,13 @@
     .separator {
         display: inline;
     }
+    
+    /* FIX: Background image for Experience section on tablet */
+    #experience.parallax {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+    }
 }
 
 /* Mobile screens (up to 768px) */
@@ -45,13 +52,14 @@
     .caption-content h2 {
         font-size: 3rem !important;
         font-weight: 700 !important;
-        margin-bottom: 30px !important;
+        margin-bottom: 50px !important; /* INCREASED spacing below name */
     }
     
     .caption-content h3 {
         font-size: 2rem !important;
         line-height: 1.6 !important;
         margin-bottom: 20px !important;
+        margin-top: 0 !important; /* Remove any top margin */
     }
     
     .caption-content h4 {
@@ -79,42 +87,37 @@
         display: none;
     }
     
-    /* Alternative: if you want to keep the bars but on separate lines */
-    /* Uncomment this if preferred:
-    .separator {
-        display: none;
-    }
-    .credential-item::after,
-    .affiliation-item::after {
-        content: "";
-        display: block;
-        height: 8px;
-    }
-    */
-    
-    /* ==================== FIX 3: Intro text stays with photo ==================== */
+    /* ==================== FIX 3: Intro text same size as bullets, appears below photo ==================== */
     
     #about .welcome-block {
         overflow: hidden;
+        display: block;
     }
     
     #about .welcome-block img {
-        float: left;
-        margin-right: 20px;
-        margin-bottom: 20px;
-        max-width: 140px;
+        float: none; /* CHANGED: Don't float on mobile */
+        display: block;
+        margin: 0 auto 30px; /* CHANGED: Center and add space below */
+        max-width: 160px;
     }
     
     #about .message-body {
+        clear: both;
         overflow: visible;
         margin-bottom: 30px;
+        margin-top: 30px; /* ADDED: Space before text starts */
     }
     
     #about .message-body p {
         margin-top: 0;
         line-height: 1.8;
-        font-size: 1.6rem;
-        display: flow-root; /* Ensures proper text flow */
+        font-size: 1.8rem; /* CHANGED: Match bullet point size */
+    }
+    
+    /* Ensure bullet points are same size */
+    #about .message-body ul li {
+        font-size: 1.8rem;
+        line-height: 1.8;
     }
     
     /* ==================== FIX 4: Larger section headers ==================== */
@@ -124,28 +127,66 @@
         display: block;
     }
     
-    /* ==================== FIX 4b: Center navigation arrows ==================== */
+    /* FIX: Reduce width of underline under section headers */
+    .sec-title h2:after {
+        width: 80px !important; /* REDUCED from 115px */
+        left: 50% !important;
+        margin-left: -40px !important; /* Center it */
+    }
+    
+    /* ==================== FIX 4b: Center navigation arrows with reduced width ==================== */
     
     #experience .owl-buttons,
     #testimonial .owl-buttons,
     .owl-buttons {
         float: none !important;
-        display: block !important;
+        display: inline-block !important; /* CHANGED: inline-block instead of block */
         text-align: center;
         margin: 25px auto;
         clear: both;
         width: auto;
+        padding: 1px 12px 5px; /* REDUCED padding for narrower width */
+    }
+    
+    /* Center the arrows container */
+    #experience .row,
+    #testimonial .row {
+        text-align: center;
+    }
+    
+    /* ==================== FIX: Experience section background image ==================== */
+    
+    #experience.parallax {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important; /* Critical for mobile */
+    }
+    
+    #experience .overlay {
+        background-color: rgba(0, 0, 0, 0.5);
     }
     
     /* ==================== FIX 5: White space on content sides ==================== */
     
     #publications .container,
     #contributions .container,
-    #projects .container,
-    #contact .container {
+    #projects .container {
         padding-left: 20px;
         padding-right: 20px;
         max-width: 100%;
+    }
+    
+    /* FIX: Contact section text 90% width */
+    #contact .container {
+        padding-left: 5%;
+        padding-right: 5%;
+        max-width: 100%;
+    }
+    
+    #contact .sec-title p {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .project-wrapper {
@@ -219,7 +260,7 @@
     
     .caption-content h2 {
         font-size: 2.4rem !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 40px !important; /* Still good spacing */
     }
     
     .caption-content h3 {
@@ -230,27 +271,34 @@
         font-size: 1.3rem !important;
     }
     
-    /* ==================== Stack photo completely ==================== */
+    /* ==================== Photo completely stacked ==================== */
     
     #about .welcome-block img {
         float: none;
         display: block;
-        margin: 0 auto 20px;
-        max-width: 160px;
+        margin: 0 auto 25px;
+        max-width: 140px;
     }
     
     #about .message-body {
         text-align: left;
+        margin-top: 25px;
     }
     
-    #about .message-body p {
-        font-size: 1.4rem;
+    #about .message-body p,
+    #about .message-body ul li {
+        font-size: 1.6rem; /* Slightly smaller but still readable */
     }
     
     /* ==================== Smaller section headers ==================== */
     
     .sec-title p strong {
         font-size: 2.4rem !important;
+    }
+    
+    .sec-title h2:after {
+        width: 60px !important;
+        margin-left: -30px !important;
     }
     
     .accordion-header h3,
@@ -262,10 +310,14 @@
     
     #publications .container,
     #contributions .container,
-    #projects .container,
-    #contact .container {
+    #projects .container {
         padding-left: 15px;
         padding-right: 15px;
+    }
+    
+    #contact .container {
+        padding-left: 5%;
+        padding-right: 5%;
     }
     
     .accordion-content-inner {
@@ -301,6 +353,12 @@
         font-size: 1.5rem;
     }
     
+    /* ==================== Narrower nav arrows on small screens ==================== */
+    
+    .owl-buttons {
+        padding: 1px 8px 5px !important;
+    }
+    
     main > section {
         padding: 40px 0;
     }
@@ -311,6 +369,7 @@
     
     .caption-content h2 {
         font-size: 2.5rem !important;
+        margin-bottom: 40px !important;
     }
     
     .caption-content h3 {
@@ -324,5 +383,10 @@
     .credential-item,
     .affiliation-item {
         margin: 5px 0;
+    }
+    
+    #about .message-body p,
+    #about .message-body ul li {
+        font-size: 1.6rem;
     }
 }
