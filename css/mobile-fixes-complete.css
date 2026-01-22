@@ -1,6 +1,6 @@
 /* =================================== */
-/* REFINED MOBILE FIXES - VERSION 4 */
-/* Replace mobile-fixes-complete-v3.css with this version */
+/* REFINED MOBILE FIXES - VERSION 6 */
+/* Replace mobile-fixes-complete-v5.css with this version */
 /* =================================== */
 
 /* Desktop - keep everything as is */
@@ -44,9 +44,10 @@
         background-attachment: scroll !important;
     }
     
-    /* Maintain overlay opacity on tablet - STRONGER */
+    /* MATCH DESKTOP: Sky blue overlay at 78% opacity */
     #experience .overlay {
-        background-color: rgba(255, 255, 255, 0.85) !important;
+        background-color: rgba(135, 206, 235, 0.78) !important;
+        padding: 70px 0 40px !important;
     }
     
     /* Increase body text size */
@@ -58,30 +59,28 @@
 /* Mobile screens (up to 768px) */
 @media (max-width: 768px) {
     
-    /* ==================== FIX 1: Name positioning - remove excess padding ==================== */
-    
-    /* REMOVED: slide-caption padding-top to fix positioning issue */
+    /* ==================== FIX 1: Name positioning ==================== */
     
     .caption-content h2 {
         font-size: 3rem !important;
         font-weight: 700 !important;
         margin-bottom: 50px !important;
-        margin-top: 0 !important; /* REMOVED extra margin */
+        margin-top: 0 !important;
     }
     
-    /* Move credentials down MORE (but keep Topical Editor in place) */
+    /* Move credentials down EVEN MORE (but keep Topical Editor in place) */
     .caption-content h3.credentials-line {
         font-size: 2rem !important;
         line-height: 1.6 !important;
         margin-bottom: 20px !important;
-        margin-top: 60px !important; /* INCREASED from 30px */
+        margin-top: 80px !important;
     }
     
     /* Keep affiliations line (Topical Editor) in its current position */
     .caption-content h4.affiliations-line {
         font-size: 1.6rem !important;
         line-height: 1.5 !important;
-        margin-top: 0 !important; /* Keep where it is */
+        margin-top: 0 !important;
     }
     
     /* Generic h3/h4 for backwards compatibility if classes aren't used */
@@ -89,7 +88,7 @@
         font-size: 2rem !important;
         line-height: 1.6 !important;
         margin-bottom: 20px !important;
-        margin-top: 60px !important;
+        margin-top: 80px !important;
     }
     
     .caption-content h4 {
@@ -120,11 +119,11 @@
     /* ==================== FIX 3: Photo centered, text below (separated) ==================== */
     
     #about {
-        padding-top: 50px; /* Normal section padding */
+        padding-top: 50px;
     }
     
     #about .welcome-block {
-        overflow: visible; /* CHANGED */
+        overflow: visible;
         display: block;
         text-align: center;
     }
@@ -133,7 +132,7 @@
     #about .welcome-block img {
         float: none !important;
         display: block !important;
-        margin: 0 auto 40px !important; /* CHANGED: Good spacing below photo */
+        margin: 0 auto 40px !important;
         max-width: 160px !important;
     }
     
@@ -142,7 +141,7 @@
         clear: both !important;
         overflow: visible !important;
         margin-bottom: 30px !important;
-        margin-top: 0 !important; /* REMOVED 100px - text flows naturally after photo */
+        margin-top: 0 !important;
         text-align: left !important;
     }
     
@@ -150,12 +149,12 @@
     #about .message-body p {
         margin-top: 0 !important;
         line-height: 1.8 !important;
-        font-size: 1.9rem !important; /* INCREASED from 1.8rem */
+        font-size: 1.9rem !important;
     }
     
     /* Ensure bullet points match body text size */
     #about .message-body ul li {
-        font-size: 1.9rem !important; /* INCREASED from 1.8rem */
+        font-size: 1.9rem !important;
         line-height: 1.8 !important;
     }
     
@@ -173,16 +172,24 @@
         margin-left: -40px !important;
     }
     
-    /* ==================== FIX 4b: Experience section - MORE spacing and STRONGER overlay ==================== */
+    /* ==================== FIX 4b: Experience section - spacing and logos on top ==================== */
     
     /* INCREASED space after section header before logos */
     #experience .sec-title {
-        margin-bottom: 90px !important; /* INCREASED from 70px to prevent logo cutoff */
+        margin-bottom: 90px !important;
     }
     
     /* Also add padding to testimonial container */
     #testimonial {
         padding-top: 30px !important;
+        position: relative !important;
+        z-index: 10 !important; /* Force logos above overlay */
+    }
+    
+    /* Ensure testimonial items are above overlay */
+    .testimonial-item {
+        position: relative !important;
+        z-index: 15 !important; /* Even higher z-index for logos */
     }
     
     /* Center navigation arrows with reduced width */
@@ -196,6 +203,8 @@
         clear: both;
         width: auto;
         padding: 1px 12px 5px;
+        position: relative !important;
+        z-index: 20 !important; /* Arrows on top too */
     }
     
     /* Center the arrows container */
@@ -204,7 +213,7 @@
         text-align: center;
     }
     
-    /* ==================== FIX 4c: Experience section - MUCH STRONGER overlay for readability ==================== */
+    /* ==================== FIX 4c: Experience overlay - EXACT MATCH TO DESKTOP ==================== */
     
     #experience.parallax {
         background-size: cover !important;
@@ -212,10 +221,12 @@
         background-attachment: scroll !important;
     }
     
-    /* STRONGER white overlay for better logo readability */
+    /* EXACT DESKTOP MATCH: Sky blue overlay rgba(135, 206, 235, 0.78) */
     #experience .overlay {
-        background-color: rgba(255, 255, 255, 0.85) !important; /* CHANGED to white with high opacity */
-        padding: 50px 0 !important;
+        background-color: rgba(135, 206, 235, 0.78) !important;
+        padding: 70px 0 40px !important;
+        position: relative !important;
+        z-index: 5 !important; /* Overlay below content */
     }
     
     /* Ensure overlay covers entire section */
@@ -223,11 +234,11 @@
         position: relative !important;
     }
     
-    /* ==================== FIX 5: Larger accordion section headers ==================== */
+    /* ==================== FIX 5: LARGER accordion section headers (subheaders) ==================== */
     
     .accordion-header h3,
     .accordion-header h4 {
-        font-size: 1.8rem !important;
+        font-size: 2rem !important;
         line-height: 1.4;
         font-weight: 600 !important;
     }
@@ -299,16 +310,16 @@
     .testimonial-item img {
         max-width: 200px;
         height: auto;
-        margin: 0 auto 20px; /* INCREASED spacing */
+        margin: 0 auto 20px;
     }
     
     .testimonial-item p {
-        font-size: 1.7rem !important; /* INCREASED */
+        font-size: 1.7rem !important;
         line-height: 1.5;
     }
     
     .testimonial-item span {
-        font-size: 1.9rem !important; /* INCREASED */
+        font-size: 1.9rem !important;
         display: block;
         margin-bottom: 10px;
     }
@@ -333,7 +344,7 @@
     .caption-content h3.credentials-line,
     .caption-content h3 {
         font-size: 1.6rem !important;
-        margin-top: 50px !important; /* Still moved down */
+        margin-top: 70px !important;
     }
     
     .caption-content h4 {
@@ -356,7 +367,7 @@
     
     #about .message-body p,
     #about .message-body ul li {
-        font-size: 1.7rem !important; /* Still larger than before */
+        font-size: 1.7rem !important;
     }
     
     /* ==================== Smaller section headers ==================== */
@@ -370,10 +381,10 @@
         margin-left: -30px !important;
     }
     
-    /* Accordion headers still readable on small screens */
+    /* Accordion headers still larger/readable on small screens */
     .accordion-header h3,
     .accordion-header h4 {
-        font-size: 1.5rem !important;
+        font-size: 1.7rem !important;
     }
     
     /* Experience section spacing on small screens */
@@ -455,7 +466,7 @@
     
     .caption-content h3 {
         font-size: 1.7rem !important;
-        margin-top: 40px !important;
+        margin-top: 60px !important;
     }
     
     .caption-content h4 {
@@ -478,6 +489,6 @@
     
     .accordion-header h3,
     .accordion-header h4 {
-        font-size: 1.6rem !important;
+        font-size: 1.8rem !important;
     }
 }
