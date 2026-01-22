@@ -257,13 +257,13 @@
     /* ==================== FIX 4d: LARGER text in Experience section ==================== */
     
     .testimonial-item span {
-        font-size: 2.1rem !important;
+        font-size: 2.3rem !important;
         display: block;
         margin-bottom: 10px;
     }
     
     .testimonial-item p {
-        font-size: 1.9rem !important;
+        font-size: 2.2 rem !important;
         line-height: 1.5;
     }
     
@@ -427,11 +427,11 @@
     /* ==================== Experience text still readable on small screens ==================== */
     
     .testimonial-item span {
-        font-size: 1.8rem !important;
+        font-size: 2.0 rem !important;
     }
     
     .testimonial-item p {
-        font-size: 1.6rem !important;
+        font-size: 1.9rem !important;
     }
     
     /* ==================== Tighter spacing ==================== */
