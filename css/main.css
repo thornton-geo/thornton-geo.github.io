@@ -915,6 +915,15 @@ ul.external li a:hover {
     color: #fff;
 }
 
+.testimonial-item a img {
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.testimonial-item a:hover img {
+  opacity: 0.85;
+}
+
 
 /*=================================================================
 	Price
